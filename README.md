@@ -14,17 +14,8 @@ from PIL import Image
 Here's a simple example of how to use the application to generate and display a QR code for a payment:
 
 # Payment information
-payment_info = "upi://pay?pa=example@upi&pn=JohnDoe&am=100&cu=INR"
+payment_info = 'upi://pay?pa={upi_id}&pn=Recipent%20Name&mc=1234'
 
-# Generate QR code
-qr = qrcode.QRCode(
-    version=1,
-    error_correction=qrcode.constants.ERROR_CORRECT_L,
-    box_size=10,
-    border=4,
-)
-qr.add_data(payment_info)
-qr.make(fit=True)
 
 # Create an image from the QR Code instance
 img = qr.make_image(fill_color="black", back_color="white")
